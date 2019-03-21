@@ -10,11 +10,13 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     book.update(book_params)
     redirect_to book_path
-end
+  end
 
   def books
     @book = Book.new
     @books = Book.all
+    
+    @book = Book.find(params[:id])
 
   end
 
